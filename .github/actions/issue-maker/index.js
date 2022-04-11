@@ -20,3 +20,4 @@ owner:github.context.repo.owner,
         core.setFailed(e.message);
     }
 }
+run()
