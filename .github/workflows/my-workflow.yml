@@ -1,7 +1,8 @@
 name: JS Actions
 
 on:
-  [push]
+  pull_request:
+    types: [labeled]
 
 jobs:
   action:
@@ -9,10 +10,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      
+
       - name: hello-action
         uses: ./.github/actions/hello-world
-        with:
-          first-greeting: "learning lab user"
-          second-greeting: "lab user 2"
-          third-greeting: "user 3 lab"
+
+      - name: ha-ha
+        uses: ./.github/actions/joke-action
